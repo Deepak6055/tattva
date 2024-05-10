@@ -12,6 +12,7 @@ import {
 import { motion } from "framer-motion";
 
 import RightArrowIcon from "./../assets/icons/rightArrow.svg";
+import DropdownButton from "./dropdown/DropdownButton";
 
 const variants = {
   expanded: { width: "20%" },
@@ -58,8 +59,7 @@ function Navbar() {
     >
     <p className="p--2">Tattva</p>
   </span>
-</div>
-
+  </div>
       </div>
       <div className="flex flex-col space-y-8 mt-12">
         <div className="nav-links w-full">
@@ -83,6 +83,16 @@ function Navbar() {
               </button>
             </Link>
           </div>
+        {/* <div className="nav-links w-full">
+              <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-1 rounded flex flex-row items-center justify-center space-x-2">
+                <File />
+                <span className={!isExpanded ? "hidden" : "block"}>
+                <DropdownButton/>
+                </span>
+              </div>
+          </div> */}
+
+
         <div className="nav-links w-auto">
             <Link to="/installation">
               <button className="bg-[#fff42d] hover:bg-[#fc3d3d] text-black font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
