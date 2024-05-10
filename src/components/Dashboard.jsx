@@ -46,7 +46,7 @@ function Dashboard() {
       </p>
       <button
         onClick={toggleLanguage}
-        className="mt-4 px-4 py-2 bg-[#fc3d3d] hover:bg-[#fff42d] text-black rounded"
+        className="mt-4 px-4 py-2 bg-[#FF8C00] font font-semibold hover:bg-[#fff42d] text-black rounded"
       >
         {currentTranslation.translateButton}
       </button>
@@ -56,15 +56,16 @@ function Dashboard() {
               <Link to="/installation">
               <a
                 href="#"
-                className="rounded-md bg-[#fc3d3d] px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-[#fff42d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-[#FF8C00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-[#fff42d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </a>
               </Link>
-
+              <Link to="/aboutus">
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>
+              </Link>
             </div>
           </div>
         </div>
