@@ -27,7 +27,7 @@ function Navbar() {
       animate={isExpanded ? "expanded" : "nonexpanded"}
       variants={variants}
       className={
-        "py-10 h-screen flex flex-col border border-r-1 bg-[#FDFDFD] relative" +
+        "py-10  flex flex-col border border-r-1 bg-[#fc3d3d] relative" +
         (isExpanded ? " px-10" : " px-6")
       }
     >
@@ -44,21 +44,27 @@ function Navbar() {
       >
         <img src={RightArrowIcon} className="w-2" />
       </div>
-      <div className="logo-div flex space-x-4 items-center ">
+      <div className="logo-div flex space-x-4 items-center bg ">
       <div className="">
-  <span
-    className={`${
-      !isExpanded ? "hidden" : "block"
-    } text-2xl font-semibold shadow-md p-2 rounded bg-white`}
-  >
-    Tattva
+      <span
+      className={`${
+        !isExpanded ? "hidden" : "block"
+      } text-2xl font-semibold  p-8 rounded text-[#313030]`}
+      style={{
+        backgroundImage: "url(/images/bg.png)",
+        backgroundSize: "contain",
+        backgroundRepeat:"no-repeat", // Ensures the image covers the entire component
+        backgroundPosition: "center", // Centers the image
+      }}
+    >
+    <p className="p--2">Tattva</p>
   </span>
   </div>
       </div>
       <div className="flex flex-col space-y-8 mt-12">
         <div className="nav-links w-full">
             <Link to="/">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
+              <button className="bg-[#fff42d] hover:bg-[#fc3d3d] text-black font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
                 <LayoutDashboard />
                 <span className={!isExpanded ? "hidden" : "block"}>
                  Dashboard
@@ -69,7 +75,7 @@ function Navbar() {
 
         <div className="nav-links w-full">
             <Link to="/documentation">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
+              <button className="bg-[#fff42d] hover:bg-[#fc3d3d] text-black font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
                 <File />
                 <span className={!isExpanded ? "hidden" : "block"}>
                   Documentation
@@ -89,7 +95,7 @@ function Navbar() {
 
         <div className="nav-links w-auto">
             <Link to="/installation">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
+              <button className="bg-[#fff42d] hover:bg-[#fc3d3d] text-black font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
                 <FileDown />
                 <span className={!isExpanded ? "hidden" : "block"}>
                 Installation
@@ -99,7 +105,7 @@ function Navbar() {
           </div>
         <div className="nav-links w w-max">
             <Link to="/aboutus">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
+              <button className="bg-[#fff42d] hover:bg-[#fc3d3d] text-black font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
               <ArrowLeftRightIcon />
                 <span className={!isExpanded ? "hidden" : "block"}>
                 About us 
