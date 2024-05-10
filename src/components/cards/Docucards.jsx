@@ -15,7 +15,7 @@ function Docucards({
 ) {
   return (
     <div>
-      <Card className="mt-6 w-96 border-solid rounded-md bg-[#e1d0d0]" shadow={true}>
+      <Card className="mt-6 w-96 border-solid rounded-md bg-[#FF8C00]" shadow={true}>
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">
             {title}

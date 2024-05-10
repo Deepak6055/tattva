@@ -6,7 +6,7 @@ function Documentation() {
   return (
     <div className="p-6 bg-light-grey min-h-screen">
       <h1 className="text-4xl font-bold mb-4 text-dark-blue">Tattva Language Documentation</h1>
-      <div className='rounded-lg border border-double p-10 '>
+      <div className='rounded-lg border border-none p-10 '>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4"> {/* Layout for the cards */}
           {documen.map((item) => (
             <Docucards

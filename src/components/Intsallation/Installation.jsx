@@ -119,7 +119,7 @@ function Installation() {
         </div>
 
         {/* Install Section */}
-        <div className="p-4 bg-[#c53eff] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-dark-blue">
             {currentTranslation.install.title}
           </h2>
@@ -140,7 +140,7 @@ function Installation() {
         </div>
 
         {/* GitHub Repository Section */}
-        <div className="p-4 bg-[#ff3ef5] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.github.title}
           </h2>
@@ -156,7 +156,7 @@ function Installation() {
         </div>
 
         {/* Remaining Sections */}
-        <div className="p-4 bg-[#ff3ebf] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.zip.title}
           </h2>
@@ -165,7 +165,7 @@ function Installation() {
           </p>
         </div>
 
-        <div className="p-4 bg-[#ff3e75] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.extract.title}
           </h2>
@@ -174,7 +174,7 @@ function Installation() {
           </p>
         </div>
 
-        <div className="p-4 bg-[#683eff] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.environment.title}
           </h2>
@@ -183,7 +183,7 @@ function Installation() {
           </p>
         </div>
 
-        <div className="p-4 bg-[#3ed2ff] rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.shell.title}
           </h2>
@@ -193,7 +193,7 @@ function Installation() {
           </p>
         </div>
 
-        <div className="p-4 bg-white rounded-lg shadow-md mb-4">
+        <div className="p-4 bg-[#FF8C00] rounded-lg shadow-md mb-4">
           <h2 className="text-2xl font-bold mb-2 text-black">
             {currentTranslation.sections.examples.title}
           </h2>
