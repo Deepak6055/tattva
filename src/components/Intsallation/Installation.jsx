@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import React from 'react'
+import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function Installation() {
   const [isCopied, setIsCopied] = useState(false);
+  const [language, setLanguage] = useState('en'); // 'en' for English, 'kn' for Kannada
 
   const handleCopy = () => {
     setIsCopied(true);
@@ -11,64 +11,206 @@ function Installation() {
       setIsCopied(false);
     }, 2000);
   };
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === 'en' ? 'kn' : 'en'));
+  };
+
+  // Translation data
+  const translations = {
+    en: {
+      heading: "Installation",
+      install: {
+        title: "Install the package using pip",
+        description: "In your terminal, type the following code:",
+        copyButton: "Copy",
+        copiedButton: "Copied!",
+        code: "pip install tattva",
+      },
+      sections: {
+        github: {
+          title: "Locate Your GitHub Repository:",
+          description:
+            "Navigate to your GitHub repository where your project is hosted.",
+          linkText: "Tattva Repository",
+        },
+        zip: {
+          title: "Download the ZIP Archive:",
+          description:
+            'Look for the "Code" button (usually green) on the repository\'s main page. Click on it and select "Download ZIP."',
+        },
+        extract: {
+          title: "Extract the ZIP Archive:",
+          description:
+            'Right-click on the ZIP file and choose "Extract All" or "Extract Here."',
+        },
+        environment: {
+          title: "Set Up the Environment:",
+          description:
+            'Ensure you have Python installed and install dependencies with "pip install -r requirements.txt".',
+        },
+        shell: {
+          title: "Run shell.py Script:",
+          description: "To run the shell.py script, use the following command:",
+          code: "python shell.py",
+        },
+        examples: {
+          title: "Explore the Examples:",
+          description:
+            'If there is an "examples" folder, navigate to it with "cd examples" and run specific examples.',
+        },
+      },
+    },
+    kn: {
+      heading: "ಸ್ಥಾಪನೆ",
+      install: {
+        title: "pip ಬಳಸಿ ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಸ್ಥಾಪಿಸಿ",
+        description: "ನಿಮ್ಮ ಟರ್ಮಿನಲ್‌ನಲ್ಲಿ ಈ ಕೆಳಗಿನ ಕೋಡ್ ಅನ್ನು ಟೈಪ್ ಮಾಡಿ:",
+        copyButton: "ನಕಲು ಮಾಡಿ",
+        copiedButton: "ನಕಲು ಮಾಡಲಾಗಿದೆ!",
+        code: "pip install tattva",
+      },
+      sections: {
+        github: {
+          title: "ನಿಮ್ಮ GitHub ರಿಪೊಸಿಟರಿಯನ್ನು ಹೂಡಿಕೆ ಮಾಡಿ:",
+          description: "ನಿಮ್ಮ GitHub ರಿಪೊಸಿಟರಿ ನೀವು ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಹೊಂದಿದ್ದು ಸ್ಥಳಾಂತರಿಸಿ.",
+          linkText: "ತತ್ತ್ವ ರಿಪೊಸಿಟರಿ",
+        },
+        zip: {
+          title: "ZIP ಆರ್ಕೈವ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ:",
+          description: 'ರಿಪೊಸಿಟರಿ ಮುಖ್ಯ ಪುಟದ "ಕೋಡ್" ಬಟನ್ ನೋಡಿ. ಅದನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು "ಡೌನ್‌ಲೋಡ್ ZIP" ಆಯ್ಕೆಮಾಡಿ.',
+        },
+        extract: {
+          title: "ZIP ಆರ್ಕೈವ್ ಅನ್ನು ಹಾಣಿಹಾಕಿ:",
+          description: 'ZIP ಫೈಲ್ ಅನ್ನು ಒಂದು ಕಡೆಯಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು "ಎಕ್ಸ್‌ಟ್ರಾಕ್ಟ್ ಆಲ್" ಅಥವಾ "ಇಲ್ಲಿ ಎಕ್ಸ್‌ಟ್ರಾಕ್ಟ್" ಆಯ್ಕೆ ಮಾಡಿ.',
+        },
+        environment: {
+          title: "ಪರಿಸರವನ್ನು ಸ್ಥಾಪಿಸಿ:",
+          description: 'ನೀವು Python ಸ್ಥಾಪಿಸಿರುತ್ತೀರಿ ಎಂದು ಖಚಿತಗೊಳಿಸಿ ಮತ್ತು "pip install -r requirements.txt" ಮೂಲಕ ಅವಶ್ಯಕತೆಯಿರುವುದನ್ನು ಸ್ಥಾಪಿಸಿ.',
+        },
+        shell: {
+          title: "shell.py ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಿ:",
+          description: "shell.py ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲು ಈ ಕಮಾಂಡ್ ಅನ್ನು ಬಳಸಿರಿ:",
+          code: "python shell.py",
+        },
+        examples: {
+          title: "ಉದಾಹರಣೆಗಳನ್ನು ಅನುಸಾರಿಸಿ:",
+          description: 'ನೀವು "ಉದಾಹರಣೆಗಳು" ಫೋಲ್ಡರ್ ಅನ್ನು ಹೊಂದಿದ್ದರೆ, "cd examples" ಮೂಲಕ ತೆರಳಿ ಮತ್ತು ನಿರ್ದಿಷ್ಟ ಉದಾಹರಣೆಗಳನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಿ.',
+        },
+      },
+    },
+  };
+
+  const currentTranslation = translations[language]; // Get current translations
+
   return (
-    <>  
-    <div className="p-6 bg-light-grey min-h-screen">
-    <h1 className="text-4xl font-bold mb-4 text-dark-blue">Installation</h1>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-dark-blue">Install the package using pip</h2>
-      <p className="mb-4">In your terminal type the following code:</p>
-      <div className="flex items-center bg-light-grey rounded p-2">
-        <pre className="mb-0 mr-2">pip install tattva</pre>
-        <CopyToClipboard text="pip install tattva" onCopy={handleCopy}>
-          <button className="px-2 py-1 bg-dark-blue text-[#3B83F6] rounded">
-            {isCopied ? "Copied!" : "Copy"}
+    <>
+      <div className="p-6 bg-light-grey min-h-screen">
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-4xl font-bold text-dark-blue">
+            {currentTranslation.heading}
+          </h1>
+          <button
+            onClick={toggleLanguage}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            {language === 'en' ? 'Translate to Kannada' : 'Translate to English'}
           </button>
-        </CopyToClipboard>
+        </div>
+
+        {/* Install Section */}
+        <div className="p-4 bg-[#c53eff] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-dark-blue">
+            {currentTranslation.install.title}
+          </h2>
+          <p>{currentTranslation.install.description}</p>
+          <div className="flex items-center bg-light-grey rounded p-2">
+            <pre className="mb-0 mr-2">{currentTranslation.install.code}</pre>
+            <CopyToClipboard
+              text={currentTranslation.install.code}
+              onCopy={handleCopy}
+            >
+              <button
+                className="px-2 py-1 bg-dark-blue text-[#e6e6e6] rounded"
+              >
+                {isCopied ? currentTranslation.install.copiedButton : currentTranslation.install.copyButton}
+              </button>
+            </CopyToClipboard>
+          </div>
+        </div>
+
+        {/* GitHub Repository Section */}
+        <div className="p-4 bg-[#ff3ef5] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.github.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.github.description} <br />
+            <a
+              href="https://github.com/Bhaskar-N-Prasad/Tattva"
+              className="text-[#4f85fa] hover:text-[#566adf] font font-bold"
+            >
+              {currentTranslation.sections.github.linkText}
+            </a>
+          </p>
+        </div>
+
+        {/* Remaining Sections */}
+        <div className="p-4 bg-[#ff3ebf] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.zip.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.zip.description}
+          </p>
+        </div>
+
+        <div className="p-4 bg-[#ff3e75] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.extract.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.extract.description}
+          </p>
+        </div>
+
+        <div className="p-4 bg-[#683eff] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.environment.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.environment.description}
+          </p>
+        </div>
+
+        <div className="p-4 bg-[#3ed2ff] rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.shell.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.shell.description} <br />
+            <code>{currentTranslation.sections.shell.code}</code>
+          </p>
+        </div>
+
+        <div className="p-4 bg-white rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-bold mb-2 text-black">
+            {currentTranslation.sections.examples.title}
+          </h2>
+          <p>
+            {currentTranslation.sections.examples.description} <br />
+            <code>{currentTranslation.sections.examples.code}</code>
+          </p>
+        </div>
+
+        <div className="p-4 bg-blue-100 rounded-lg shadow-md mt-4">
+          <p>
+            These steps should guide you through the process of downloading, extracting, and running a Python script from your GitHub repository.
+          </p>
+        </div>
       </div>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Locate Your GitHub Repository:</h2>
-      <p className="mb-4">Navigate to your GitHub repository where your project is hosted.
-      <br/>
-      <a href="https://github.com/Bhaskar-N-Prasad/Tattva" className='text text-[#3B83F6]'> Tattva Repository</a>
-      </p>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Download the ZIP Archive:</h2>
-      <p className="mb-4">Look for the "Code" button (usually green) on the repository's main page. Click on it and select "Download ZIP." This will download a compressed ZIP archive of your repository to your local machine.</p>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Extract the ZIP Archive:</h2>
-      <p className="mb-4">Once the ZIP file is downloaded, navigate to its location on your computer. Right-click on the ZIP file and choose "Extract All" or "Extract Here," depending on your file compression utility. Select a folder where you want to extract the contents and click "Extract." This will create a new folder with your repository's content.</p>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Set Up the Environment:</h2>
-      <p className="mb-4">Open a terminal or command prompt in the folder where you extracted the ZIP archive. Ensure you have Python installed. You can check by running python --version or python3 --version in the terminal. If you have a requirements.txt file in your repository, you can install the necessary dependencies by running pip install -r requirements.txt.</p>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Run shell.py Script:</h2>
-      <p className="mb-4">Navigate to the correct directory if needed: <br /><code>cd path/to/your/extracted/repository</code> <br />To run the shell.py script, you can use the following command: <br /><code>python shell.py</code></p>
-    </div>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
-      <h2 className="text-2xl font-bold mb-2 text-blue-500">Explore the Examples:</h2>
-      <p className="mb-4">If there is an examples folder in your repository, navigate to it using the terminal: <br /><code>cd examples</code> <br />To run a specific example, use a command like: <br /><code>python example_script.py</code></p>
-    </div>
-
-    <div className="p-4 bg-blue-100 rounded-lg shadow-md mt-4">
-      <p className="my-4">These steps should guide you through the process of downloading, extracting, and running a Python script from your GitHub repository. If there are specific requirements or additional setup instructions in your repository, be sure to follow those as well.</p>
-    </div>
-  </div>
     </>
-
-  )
+  );
 }
 
-export default Installation
+export default Installation;
