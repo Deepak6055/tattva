@@ -1,11 +1,22 @@
 import React from 'react'
+import Docucards from '../cards/Docucards'
+import documen from '../../data/documen.json'
 
 function Documentation() {
   return (
     <div className="p-6 bg-light-grey min-h-screen">
     <h1 className="text-4xl font-bold mb-4 text-dark-blue">Tattva Language Documentation</h1>
-
-    <div className="p-4 bg-white rounded-lg shadow-md mb-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> {/* Layout for the cards */}
+        {documen.map((item) => (
+          <Docucards
+            key={item.id} // Unique key for each item
+            title={item.title} // Passing the title to Docucards
+            intro={item.intro} // Passing the intro to Docucards
+            path={item.pathforlinking} // Passing the path for linking (assuming it’s used in Docucards)
+          />
+        ))}
+      </div>
+    {/* <div className="p-4 bg-white rounded-lg shadow-md mb-4">
       <h2 className="text-2xl font-bold mb-2 text-dark-blue">Keywords</h2>
 
       <div className="p-4 bg-white rounded-lg shadow-sm mb-4">
@@ -93,7 +104,7 @@ function Documentation() {
           <code>kaarya add(x, y) bari(x + y)</code>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 
   )
