@@ -12,7 +12,7 @@ function App() {
   return (
     <>
        <Router>
-        <div className="flex bg bg-[#ffff2e]">
+        <div className="flex bg bg-[#ffff3c]">
           <Navbar/>
         <Routes>
           <Route path="/" element={<Dashboard />} />

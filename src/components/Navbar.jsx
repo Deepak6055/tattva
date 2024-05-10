@@ -26,7 +26,7 @@ function Navbar() {
       animate={isExpanded ? "expanded" : "nonexpanded"}
       variants={variants}
       className={
-        "py-10 h-screen flex flex-col border border-r-1 bg-[#fc3d3d] relative" +
+        "py-10  flex flex-col border border-r-1 bg-[#fc3d3d] relative" +
         (isExpanded ? " px-10" : " px-6")
       }
     >

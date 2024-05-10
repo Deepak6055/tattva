@@ -1,10 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom";
 
 
+
 function Dashboard() {
+  const [language, setLanguage] = useState('en'); // 'en' for English, 'kn' for Kannada
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === 'en' ? 'kn' : 'en'));
+  };
+
+  const translations = {
+    en: {
+      text: "Transforming programming education by breaking language barriers, empowering learners from diverse backgrounds to grasp coding concepts intuitively.",
+      translateButton: "ಅನುವಾದಿಸಿ",
+    },
+    kn: {
+      text: "ಭಾಷಾ ಅಡೆತಡೆಗಳನ್ನು ಮುರಿದುಗೊತ್ತುವ ಮೂಲಕ ಪ್ರೋಗ್ರಾಮಿಂಗ್ ಶಿಕ್ಷಣವನ್ನು ರೂಪಾಂತರಿಸಲಾಗುತ್ತಿದೆ, ವಿವಿಧ ಹಿನ್ನೆಲೆಗಳ ತಲೆಗೆ ಸಿದ್ಧತೆ ಹೊಂದಿಸಲು ಸಹಾಯ ಮಾಡುವ ಮೂಲಕ.",
+      translateButton: "Translate",
+    },
+  };
+
+  const currentTranslation = translations[language];
   return (
       <>
                <div className="bg bg-[#ffff41] mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 ">
@@ -21,16 +40,23 @@ function Dashboard() {
             <h1 className="text-8xl font-bold tracking-tight text-gray-900 sm:text-6xl ">
                   ತತ್ವ
             </h1>
-            <p className=" mt-12 text-lg leading-8 text-gray-600">
-            Transforming programming education by breaking language barriers,
-             empowering learners from diverse backgrounds to grasp coding concepts intuitively.
-            </p>
+            <div>
+      <p className="mt-12 text-lg leading-8 text-gray-600">
+        {currentTranslation.text}
+      </p>
+      <button
+        onClick={toggleLanguage}
+        className="mt-4 px-4 py-2 bg-[#fc3d3d] hover:bg-[#fff42d] text-black rounded"
+      >
+        {currentTranslation.translateButton}
+      </button>
+    </div>
             <div className="mt-10 flex items-center justify-center gap-x-6">
 
               <Link to="/installation">
               <a
                 href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-[#fc3d3d] px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-[#fff42d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </a>
