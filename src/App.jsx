@@ -6,18 +6,21 @@ import AboutUs from "./components/AboutUs/Aboutus";
 import Installation from "./components/Intsallation/Installation";
 import Documentation from "./components/Documentation/Documentation";
 import Header from "./components/Header";
+import Variables from "./components/Documentation/Variables"
 
 function App() {
   return (
     <>
        <Router>
-        <div className="flex ">
+        <div className="flex bg bg-[#ffff2e]">
           <Navbar/>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/installation" element={<Installation />} />
-          <Route path="/documentation" element={<Documentation />} />
+          <Route exact path="/documentation" element={<Documentation />}/>
+          <Route path="/documentation/variables" element={<Variables />}/>
           <Route path="/aboutus" element={<AboutUs />} />
+          
         </Routes>
         </div>
        </Router>
