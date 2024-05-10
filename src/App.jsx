@@ -9,7 +9,7 @@ import Conditionals from "./components/Documentation/documents/Conditionals";
 import Cusloops from "./components/Documentation/documents/Cusloops";
 import Arrays from "./components/Documentation/documents/Arrays";
 import ExamplePro from "./components/Documentation/documents/ExamplePro";
-import Variables from "./components/Documentation/Variables";  // Corrected import
+import Variables from "./components/Documentation/documents/Variables";  // Corrected import
 import Header from "./components/Header";  // Keeping this as it might be used elsewhere
 
 function App() {
